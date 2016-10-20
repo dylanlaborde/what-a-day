@@ -3,36 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>What_a_Day</title>
-	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="style.css"> -->
 	
 </head>
 <body>
 	<div class="main">
-		
-		
-			<span>Jours</span>
-			<input type="text" id="userInputDays" class="userInputDays">
-		
-
-		
-		
-			
-			<span>Mois</span>
-			<select name="" id="selectMois" class="selectMois"></select>
-		
-	
-			
-			<span>Année</span>
-			<input type="text" id="userInputYears" class="userInputYears">
-
-
-	
-
-
-
-
+		<span>Jours</span>
+		<input type="text" id="userInputDays" class="userInputDays">
+		<span>Mois</span>
+		<select name="" id="selectMois" class="selectMois">
+			<option value="">Janvier</option>
+			<option value="">Fevrier</option>
+			<option value="">Mars</option>
+			<option value="">Avril</option>
+			<option value="">Mai</option>
+			<option value="">Juin</option>
+			<option value="">Juillet</option>
+			<option value="">Aôut</option>
+			<option value="">Septembre</option>
+			<option value="">Octobre</option>
+			<option value="">Novembre</option>
+			<option value="">Decembre</option>
+		</select>
+		<span>Année</span>
+		<input type="text" id="userInputYears" class="userInputYears">
+		<div class="verifier">
+			<button id="check">Verifier</button>
+		</div>
+	</div>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/moment/moment.js"></script>
+	<script src="app.js"></script>
 
 </body>
 </html>
