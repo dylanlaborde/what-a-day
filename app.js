@@ -3,22 +3,45 @@ console.log("hello world");
 (function(){
 
 	var app = {
-		value : undefined,
+		jours :undefined,
+		an : undefined,
+		date: undefined,
+		
 		init : function(){
 			app.watcher();
-			
+			this.month();
+			console.log(this.jours);
+			this.remove();
+			this.condition();
+			console.log(this.jours)
+
+			  // this.remove();
+			// this.condition();
 		},
 		watcher : function(){
 			var that = this ;
 			$("#btCheck").on("click",this.check.bind(this));
 			$("#userInputDays").on("change", this.days.bind(this));
 			$("#userInputYears").on("change", this.years.bind(this));
-			$("#selectMois").on("change", this.mois.bind(this));
+			$("#selectMois").on("change", this.month.bind(this));
+			$("#restart").on("click", this.remove.bind(this));
 		},
 		check : function(){
-		// console.log(moment("this.jours, this.mois, this.an" ,"DD-MM-YYYY").format("dddd"));
-		console.log(this.jours,this.mois,this.an);
-		
+			// this.condition();
+			
+			var userdate = moment([this.jours+this.mois+this.an],"DD-MM-YYYY")
+			var date = userdate.format("dddd");
+			console.log(userdate);
+
+		 // console.log(moment(this.jours+this.mois+this.an,"DD-MM-YYYY").format("dddd"));
+		 // console.log(this.jours,this.mois,this.an);
+		 	$("#main").hide()
+		 	$("#overlay").show();
+			$("#overlay").append(date);
+			console.log(this.mois);
+			console.log(date);
+			this.error();
+			this.condition();
 		},
 		
 
@@ -32,10 +55,29 @@ console.log("hello world");
 
 		},
 
-		mois: function(){
+		month: function(){
 			this.mois =$("#selectMois").val();
 
 		},
+		condition: function(){
+			if (this.jours === undefined ) {
+				console.log("ahhhhyaa");
+			}
+			
+				
+			
+		},
+
+		remove: function(){
+			$("#main").show();
+			console.log("lala");
+			$("#overlay").hide();
+		},
+
+		error : function(){
+
+
+		}
 
 
 	}
