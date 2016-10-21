@@ -3,24 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>What_a_Day</title>
-	<!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="stylesheet" href="style.css">
 	
 </head>
 <body>
-	<div class="main">
+	<div class="overlay" id="overlay"><button id='restart'>RESET</button></div>
+	<div id="message" class="error">
+	<div class="main" id="main">
 		<span>Jours</span>
 		<input type="text" id="userInputDays" class="userInputDays">
 		<span>Mois</span>
 		<select name="" id="selectMois" class="selectMois">
-			<option value="1">Janvier</option>
-			<option value="2">Fevrier</option>
-			<option value="3">Mars</option>
-			<option value="4">Avril</option>
-			<option value="5">Mai</option>
-			<option value="6">Juin</option>
-			<option value="7">Juillet</option>
-			<option value="8">Aôut</option>
-			<option value="9">Septembre</option>
+			<option value="01">Janvier</option>
+			<option value="02">Fevrier</option>
+			<option value="03">Mars</option>
+			<option value="04">Avril</option>
+			<option value="05">Mai</option>
+			<option value="06">Juin</option>
+			<option value="07">Juillet</option>
+			<option value="08">Aôut</option>
+			<option value="09">Septembre</option>
 			<option value="10">Octobre</option>
 			<option value="11">Novembre</option>
 			<option value="12">Decembre</option>
@@ -31,8 +33,10 @@
 			<button id="btCheck">Verifier</button>
 		</div>
 	</div>
+
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="node_modules/moment/moment.js"></script>
+	<script src="node_modules/moment/locale/fr.js"></script>
 	<script src="app.js"></script>
 
 </body>
