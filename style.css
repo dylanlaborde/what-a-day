@@ -46,4 +46,16 @@ body{
 	width: 100%;
 }
 
+.error{
+	padding-top: 10pt;
+	background-color: #ff7473;
+	font-size: 15pt;
+	height: 5vh;
+	color :#fff;
+}
+
+#btCheck:hover{
+	color: #fff;
+	background-color: #47b8e0;
+}
 
