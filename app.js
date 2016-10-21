@@ -13,7 +13,9 @@ console.log("hello world");
 			console.log(this.jours);
 			this.remove();
 			this.condition();
+			this.msgError();
 			console.log(this.jours)
+			$("#message").hide();
 
 			  // this.remove();
 			// this.condition();
@@ -40,7 +42,7 @@ console.log("hello world");
 			$("#overlay").append(date);
 			console.log(this.mois);
 			console.log(date);
-			this.error();
+			
 			this.condition();
 		},
 		
@@ -64,18 +66,18 @@ console.log("hello world");
 				console.log("ahhhhyaa");
 			}
 			
-				
-			
 		},
 
 		remove: function(){
 			$("#main").show();
 			console.log("lala");
 			$("#overlay").hide();
+
 		},
 
-		error : function(){
-
+		msgError : function(){
+			$("#message").show();
+			$("#msg").append("Le jours doit etre compris entre 1 et 31");
 
 		}
 
