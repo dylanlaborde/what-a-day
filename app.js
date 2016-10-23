@@ -9,16 +9,13 @@ console.log("hello world");
 		
 		init : function(){
 			app.watcher();
-			this.month();
+			 this.month();
 			console.log(this.jours);
-			this.remove();
-			this.condition();
-			this.msgError();
 			console.log(this.jours)
 			$("#message").hide();
 
-			  // this.remove();
-			// this.condition();
+			   this.remove();
+			
 		},
 		watcher : function(){
 			var that = this ;
@@ -28,22 +25,14 @@ console.log("hello world");
 			$("#selectMois").on("change", this.month.bind(this));
 			$("#restart").on("click", this.remove.bind(this));
 		},
-		check : function(){
-			// this.condition();
-			
-			var userdate = moment([this.jours+this.mois+this.an],"DD-MM-YYYY")
+		check : function(){	
+	var userdate = moment([this.jours+this.mois+this.an],"DD-MM-YYYY")
 			var date = userdate.format("dddd");
-			console.log(userdate);
-
-		 // console.log(moment(this.jours+this.mois+this.an,"DD-MM-YYYY").format("dddd"));
-		 // console.log(this.jours,this.mois,this.an);
-		 	$("#main").hide()
-		 	$("#overlay").show();
-			$("#overlay").append(date);
-			console.log(this.mois);
-			console.log(date);
 			
-			this.condition();
+		 	 $("#main").hide()
+		 	 $("#overlay").show();
+			$("#msgOverlay").append(date);
+			 this.condition();
 		},
 		
 
@@ -51,42 +40,45 @@ console.log("hello world");
 			this.jours = $("#userInputDays").val();
 			
 		},
-
 		years : function(){
 			this.an = $("#userInputYears").val();
 
 		},
-
 		month: function(){
 			this.mois =$("#selectMois").val();
 
 		},
 		condition: function(){
-			if (this.jours === undefined ) {
-				console.log("ahhhhyaa");
+			if (this.jours === undefined && this.an === undefined) {
+				console.log("haha");
+				$("#message").show();
+				$("#msg").append("erreur aucune valeur n'a été renseigné");
+				$("#main").show();
+				$("#overlay").hide();
 			}
 			
+			
 		},
-
 		remove: function(){
-			$("#main").show();
+			 $("#main").show();
+			$("#msgOverlay").html("");			
+			 $("#overlay").hide();
 			console.log("lala");
-			$("#overlay").hide();
 
 		},
-
 		msgError : function(){
 			$("#message").show();
 			$("#msg").append("Le jours doit etre compris entre 1 et 31");
 
-		}
+		},
+		conditionDays : function(){
 
+		},
+		conditionYears : function(){
+
+		},
 
 	}
-
-// moment("2016/11/12", "YYYY-MM-DD").format("dddd");
-
-
 app.init();
 })();
-		// console.log(moment("this.an this.jours", "YYYY-DD").format("llll"));
+		
