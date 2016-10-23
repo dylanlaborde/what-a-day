@@ -70,9 +70,8 @@ console.log("hello world");
 				$("#msg").append("erreur aucune valeur n'a été renseigné");
 				$("#main").show();
 				$("#overlay").hide();
-			}
-			
-			
+			};
+
 		},
 		remove : function(){
 			$("#main").show();
@@ -111,6 +110,7 @@ console.log("hello world");
 			$("#main").show();
 			$("#msgOverlay").html("");			
 			$("#overlay").hide();
+			$("#userInputDays").empty();
 			this.ans = undefined;
 			console.log(this.an);
 			this.condition();
