@@ -70,6 +70,15 @@ console.log("hello world");
 				$("#main").show();
 				$("#overlay").hide();
 			}
+			if (this.jours === "" && this.an === "") {
+				$("#userInputDays").css("border-color","#ff7473");
+				$("#userInputYears").css("border-color","#ff7473");
+				$("#message").show();
+				$("#msg").html("");
+				$("#msg").html("erreur aucune valeur n'a été renseigné");
+				$("#main").show();
+				$("#overlay").hide();
+			};
 
 		},
 		remove : function(){
