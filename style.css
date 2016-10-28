@@ -48,9 +48,9 @@ body{
 	font-size: 100pt;
 	text-align: center;
 	justify-content: center;
-	padding-top: 15%;
+	
 	background-color: #9055A2;
-	height: 71vh;
+	height: 100vh;
 	width: 100%;
 	color: #D499B9;
 }
@@ -70,5 +70,11 @@ body{
 
 #msg{
 	margin-bottom: 10pt;
+}
+
+#msgOverlay{
+	
+	display: flex;
+	justify-content: center;
 }
 
