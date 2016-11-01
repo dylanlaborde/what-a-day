@@ -5,6 +5,7 @@ console.log("hello world");
 		an : undefined,
 		userdate : undefined,	
 		date: undefined,
+		add : undefined,
 		init : function(){
 			app.watcher();
 			this.month();
@@ -19,7 +20,10 @@ console.log("hello world");
 			$("#selectMois").on("change", this.month.bind(this));
 			$("#restart").on("click", this.restart.bind(this));
 		},
-		check : function(){	
+		check : function(){
+			this.days();
+			this.month();
+			this.years();
 			var userdate = moment([this.jours+this.mois+this.an],"DD-MM-YYYY")
 			var date = userdate.format("dddd");
 			$("#main").hide()
@@ -29,9 +33,14 @@ console.log("hello world");
 			$("#userInputDays").css("border-color","#47b8e0");
 			$("#userInputYears").css("border-color","#47b8e0");
 			this.condition();
+
 		},
 		days: function(){
 			this.jours = $("#userInputDays").val();
+			if (this.jours <10) {
+				this.conditionInf();
+			};
+			
 		},
 		years : function(){
 			this.an = $("#userInputYears").val();
@@ -42,8 +51,10 @@ console.log("hello world");
 
 		},
 		condition: function(){
+
 			userdate = moment([this.jours+this.mois+this.an],"DD-MM-YYYY")
 			date = userdate.format("dddd");
+			console.log(date);
 			if (this.jours === undefined) {
 				this.conditionDays();
 			}
@@ -69,6 +80,7 @@ console.log("hello world");
 				$("#msg").html("Entrer une date valide");
 				$("#main").show();
 				$("#overlay").hide();
+				date = $("#userInputDays").val();
 			}
 			if (this.jours === "" && this.an === "") {
 				$("#userInputDays").css("border-color","#ff7473");
@@ -81,6 +93,16 @@ console.log("hello world");
 			};
 
 		},
+		conditionInf : function(){
+			$("#userInputDays").val(this.jours -0)
+			this.jours = 0 +  $("#userInputDays").val();
+
+		
+
+
+		},
+
+
 		remove : function(){
 			$("#main").show();
 			$("#msgOverlay").html("");			
@@ -112,7 +134,7 @@ console.log("hello world");
 			$("#msgOverlay").html("");			
 			$("#overlay").hide();
 			$("#userInputDays").empty();
-			this.ans = undefined;
+		
 			this.condition();
 		},
 	}
