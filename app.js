@@ -55,9 +55,10 @@ console.log("hello world");
 			userdate = moment([this.jours+this.mois+this.an],"DD-MM-YYYY")
 			date = userdate.format("dddd");
 			console.log(date);
-			if (this.jours === undefined) {
+			if (this.jours === undefined || this.jours === "") {
+				console.log("empty");
 				this.conditionDays();
-			}
+			};
 			if (this.an === undefined) {
 				this.conditionYears();		
 			};
