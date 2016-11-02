@@ -94,12 +94,13 @@ console.log("hello world");
 
 		},
 		conditionInf : function(){
-			$("#userInputDays").val(this.jours -0)
-			this.jours = 0 +  $("#userInputDays").val();
-
-		
-
-
+			
+			if (this.jours === "") {
+				console.log("empty");
+			}else {
+				$("#userInputDays").val(this.jours -0)
+				this.jours = 0 +  $("#userInputDays").val();
+			};
 		},
 
 
@@ -134,7 +135,7 @@ console.log("hello world");
 			$("#msgOverlay").html("");			
 			$("#overlay").hide();
 			$("#userInputDays").empty();
-		
+			
 			this.condition();
 		},
 	}
